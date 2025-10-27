@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="seoTitle">Ahliman Abbasov — Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+
+    <header>
+        <nav class="nav-links">
+            <a href="#home" data-translate="navHome">Home</a>
+            <a href="#about" data-translate="navAbout">$whoami</a>
+            <a href="#writeups" data-translate="navWriteups">Writeups</a>
+            <a href="#projects" data-translate="navProjects">Projects</a>
+            <a href="#contact" data-translate="navContact">Contact</a>
+        </nav>
+        <div class="lang-toggle-container">
+            <button id="lang-toggle" class="terminal-btn">EN / AZ</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="home" class="terminal-section full-height">
+            <pre class="terminal-content">
+<span id="typing-line-1">&gt; whoami</span>
+<span id="typing-line-2"></span>
+<span id="typing-line-3" class="cursor"></span>
+            </pre>
+            <a href="#about" class="terminal-btn explore-btn" data-translate="homeExplore">Explore Portfolio</a>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="about" class="terminal-section">
+            <h2 class="section-title"><span class="prompt-char">$</span> <span data-translate="aboutTitle">whoami</span></h2>
+            <p class="bio-text" data-translate="aboutBio"></p>
+
+            <div class="about-grid">
+                <div class="skills-card">
+                    <h3 data-translate="aboutSkillsTitle">Skills:</h3>
+                    <ul>
+                        <li>SIEM (Splunk, Elastic)</li>
+                        <li>Threat Hunting</li>
+                        <li>Python / Bash</li>
+                        <li>Network Security</li>
+                    </ul>
+                </div>
+                <div class="facts-card">
+                    <h3 data-translate="aboutFactsTitle">Fun Facts:</h3>
+                    <ul>
+                        <li data-translate="fact1">👾 Loves CTFs</li>
+                        <li data-translate="fact2">🧩 Automates alerts before coffee</li>
+                        <li data-translate="fact3">📚 Always learning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <a href="assets/cv.pdf" target="_blank" class="terminal-btn" data-translate="cvView">View CV (PDF)</a>
+                <a href="assets/cv.pdf" download class="terminal-btn download-btn" data-translate="cvDownload">Download CV</a>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="writeups" class="terminal-section">
+            <h2 class="section-title"><span class="prompt-char">$</span> <span data-translate="writeupsTitle">Cybersecurity Writeups</span></h2>
+            <div id="writeups-grid" class="card-grid">
+                </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="projects" class="terminal-section">
+            <h2 class="section-title"><span class="prompt-char">$</span> <span data-translate="projectsTitle">Projects</span></h2>
+            <div id="projects-grid" class="card-grid">
+                </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="contact" class="terminal-section">
+            <h2 class="section-title"><span class="prompt-char">$</span> <span data-translate="contactTitle">Contact Me</span></h2>
+            <p data-translate="contactSubtitle">Let's connect and secure the digital world together.</p>
+
+            <div class="contact-info">
+                <p>📧 Email: <a href="mailto:ahliman.abbasov@email.com" class="link-neon">ahliman.abbasov@email.com</a></p>
+                <p>🔗 LinkedIn: <a href="#" target="_blank" class="link-neon">/in/ahlimanabbasov</a></p>
+                <p>🐙 GitHub: <a href="#" target="_blank" class="link-neon">/ahliman-code</a></p>
+            </div>
+
+            <p class="contact-form-hint" data-translate="contactFormHint">
+                Alternatively, send a direct message via email.
+            </p>
+            <a href="mailto:ahliman.abbasov@email.com?subject=Portfolio%20Inquiry" class="terminal-btn" data-translate="contactSendEmail">Send Email Now</a>
+        </section>
+
+    </main>
+
+    <div id="writeup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <div id="modal-body"></div>
+            <p class="modal-source" data-translate="modalSource">Source: </p>
+        </div>
+    </div>
+
+    <script src="data/writeups.js"></script>
+    <script src="js/lang/en.js"></script>
+    <script src="js/lang/az.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
