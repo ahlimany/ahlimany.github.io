@@ -171,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 2. Set up event listeners
     $('#lang-toggle').addEventListener('click', toggleLanguage);
-    setupModal();
     
     // 3. Start the typing effect
     initTypingEffect();
