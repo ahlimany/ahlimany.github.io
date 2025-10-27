@@ -96,12 +96,12 @@ function renderWriteups() {
     const container = $('#writeups-grid');
     container.innerHTML = ''; // Clear previous content
 
-    // Assuming writeups_data is globally available from the script import
     const data = typeof writeups_data !== 'undefined' ? writeups_data : [];
 
     data.forEach(item => {
         const title = item.title[currentLang] || item.title[defaultLang];
         const summary = item.summary[currentLang] || item.summary[defaultLang];
+        const externalLink = item.link; // <-- PULLS THE LINK
 
         const card = document.createElement('div');
         card.className = 'card writeup-card';
@@ -109,7 +109,9 @@ function renderWriteups() {
             <h4>${title}</h4>
             <p>${summary}</p>
             <div class="card-actions">
-                <button class="terminal-btn read-more-btn" data-id="${item.id}">${translations[currentLang]['cardReadMore']}</button>
+                <a href="${externalLink}" target="_blank" class="terminal-btn read-more-btn">
+                    ${translations[currentLang]['cardReadMore']}
+                </a>
             </div>
         `;
         container.appendChild(card);
@@ -159,45 +161,6 @@ function renderProjects() {
         container.appendChild(card);
     });
 }
-
-// --- Modal Functionality ---
-
-function setupModal() {
-    const modal = $('#writeup-modal');
-    const span = $('.close-btn');
-
-    // Close modal when X is clicked
-    span.onclick = () => modal.style.display = 'none';
-
-    // Close modal when clicking outside of it
-    window.onclick = (event) => {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    };
-    
-    // Open modal handler attached to the writeups grid
-    $('#writeups-grid').addEventListener('click', (e) => {
-        if (e.target.classList.contains('read-more-btn')) {
-            const itemId = e.target.getAttribute('data-id');
-            const item = writeups_data.find(w => w.id === itemId);
-
-            if (item) {
-                const title = item.title[currentLang] || item.title[defaultLang];
-                const content = item.content[currentLang] || item.content[defaultLang];
-                const source = item.source || 'N/A';
-
-                $('#modal-title').textContent = title;
-                // Simple way to handle paragraphs in the modal content
-                $('#modal-body').innerHTML = content.split('\n').map(p => `<p>${p}</p>`).join(''); 
-                $('.modal-source').textContent = `${translations[currentLang]['modalSource']} ${source}`;
-                
-                modal.style.display = 'block';
-            }
-        }
-    });
-}
-
 
 // --- Initialization ---
 
