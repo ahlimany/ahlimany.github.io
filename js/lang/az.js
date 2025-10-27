@@ -37,6 +37,4 @@ const az_lang = {
     contactFormHint: "Alternativ olaraq, birbaşa e-poçt vasitəsilə mesaj göndərin.",
     contactSendEmail: "İndi E-poçt Göndər",
     
-    // Modal
-    modalSource: "Mənbə:"
 };

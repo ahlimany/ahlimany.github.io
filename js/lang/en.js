@@ -37,6 +37,4 @@ const en_lang = {
     contactFormHint: "Alternatively, send a direct message via email.",
     contactSendEmail: "Send Email Now",
     
-    // Modal
-    modalSource: "Source:"
 };
