@@ -94,16 +94,17 @@ const initTypingEffect = async () => {
 // Writeups: Render cards from global writeups_data
 function renderWriteups() {
     const container = $('#writeups-grid');
-    container.innerHTML = ''; 
+    container.innerHTML = ''; // Clear previous content
 
     const data = typeof writeups_data !== 'undefined' ? writeups_data : [];
 
     data.forEach(item => {
-        // ... (title and summary logic)
+        const title = item.title[currentLang] || item.title[defaultLang];
+        const summary = item.summary[currentLang] || item.summary[defaultLang];
         const externalLink = item.link; // <-- PULLS THE LINK
 
         const card = document.createElement('div');
-        // ...
+        card.className = 'card writeup-card';
         card.innerHTML = `
             <h4>${title}</h4>
             <p>${summary}</p>
@@ -112,7 +113,7 @@ function renderWriteups() {
                     ${translations[currentLang]['cardReadMore']}
                 </a>
             </div>
-        `; // <<< NOTE: This uses an <a> tag pointing to the link!
+        `;
         container.appendChild(card);
     });
 }
