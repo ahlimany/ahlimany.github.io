@@ -1,17 +1,17 @@
 const writeups_data = [
     {
         id: 'w1',
-        source: 'Let’sDefend Platform',
+        source: 'Azerbaijan Cybersecurity Center',
         title: { 
-            en: 'Malware Initial Access (Case: 3224)', 
-            az: 'Zərərli Proqram İlkin Giriş (Keys: 3224)' 
+            en: 'Phishing Email Analyze lab-1', 
+            az: 'Fişing Email Analizi lab-1' 
         },
         summary: { 
-            en: 'Analysis of a suspicious file download and execution leading to an initial access event.',
-            az: 'Şübhəli faylın yüklənməsi və icrasının ilkin giriş hadisəsinə səbəb olan təhlili.'
+            en: 'Analysis of a suspicious email',
+            az: 'Şübhəli emailin təhlili.'
         },
         // --- ADD THE EXTERNAL LINK HERE ---
-        link: 'https://drive.google.com/file/d/YOUR_DOC_ID_1/view?usp=sharing' 
+        link: 'https://docs.google.com/document/d/1kOI2LJFPT5V3rryzP0XH_B_4NFd76AOQuiZiRkF_EA0/edit?usp=sharing' 
         // Note: Make sure the Google Drive link is set to "Public" or "Anyone with the link"
     },
     {
@@ -20,7 +20,7 @@ const writeups_data = [
         title: { /* ... */ },
         summary: { /* ... */ },
         // --- ADD THE EXTERNAL LINK HERE ---
-        link: 'https://www.dropbox.com/s/abcdefg1234567/PSExec_Writeup.pdf?dl=0'
+        link: 
     }
     // Add new writeups with the 'link' property.
 ];
