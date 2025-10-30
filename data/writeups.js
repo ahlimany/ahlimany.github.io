@@ -26,7 +26,7 @@ const writeups_data = [
             az: 'Test'
         },
         // --- ADD THE EXTERNAL LINK HERE ---
-        link: 
+        link: 'https://example.com/test-link'
     }
     // Add new writeups with the 'link' property.
 ];
