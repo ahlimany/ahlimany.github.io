@@ -17,8 +17,14 @@ const writeups_data = [
     {
         id: 'w2',
         source: 'Internal SOC Case',
-        title: { /* ... */ },
-        summary: { /* ... */ },
+        title: { 
+            en: 'Test', 
+            az: 'Test'
+         },
+        summary: {
+            en: 'Test',
+            az: 'Test'
+        },
         // --- ADD THE EXTERNAL LINK HERE ---
         link: 
     }
