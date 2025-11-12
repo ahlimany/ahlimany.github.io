@@ -14,10 +14,10 @@ const en_lang = {
 
     // About
     aboutTitle: "whoami",
-    aboutBio: "I am a dedicated SOC Analyst and Threat Hunter with 3+ years of experience in defensive cybersecurity. My expertise lies in real-time threat detection, incident response, and using automation (Python/Bash) to streamline security operations. I'm passionate about Blue Teaming and actively exploring cloud security and DevSecOps.",
+    aboutBio: "I’m a SOC Analyst with a strong focus on incident detection, log analysis, and cybersecurity monitoring. My background combines technical knowledge in network and system administration with hands-on experience in security operations. I have a solid understanding of Blue Team methodologies, SIEM and EDR tools, and the MITRE ATT&CK framework. I’m particularly interested in malware analysis and continuous improvement of detection capabilities. My goal is to contribute to building resilient security environments through analytical thinking, attention to detail, and a proactive defense mindset.",
     aboutSkillsTitle: "Skills:",
     aboutFactsTitle: "Fun Facts:",
-    fact1: "👾 Loves CTFs and HackTheBox challenges.",
+    fact1: "👾 Loves CTFs and LetsDefend challenges.",
     fact2: "🧩 Automates alerts before coffee.",
     fact3: "📚 Always learning and sharing knowledge.",
     cvView: "View CV (PDF)",
