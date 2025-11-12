@@ -14,10 +14,10 @@ const az_lang = {
 
     // About
     aboutTitle: "mənkiməm",
-    aboutBio: "Mən 3 ildən çox müdafiəedici kibertəhlükəsizlik təcrübəsi olan bir SOC Analitiki və Təhdid Ovçusuyam. Mənim təcrübəm real vaxt rejimində təhdidin aşkarlanması, insidentlərə cavab vermə və təhlükəsizlik əməliyyatlarını sürətləndirmək üçün avtomatlaşdırmadan (Python/Bash) istifadə etməkdən ibarətdir. Mən Blue Teaming və aktiv şəkildə bulud təhlükəsizliyi və DevSecOps-u öyrənməklə maraqlanıram.",
+    aboutBio: "Mən hadisələrin aşkarlanması, qeydlərin təhlili və kibertəhlükəsizliyin monitorinqinə güclü diqqət yetirən SOC Analitikiyəm. Mənim keçmişim şəbəkə və sistem idarəçiliyində texniki bilikləri təhlükəsizlik əməliyyatlarında praktiki təcrübə ilə birləşdirir. Mənim Blue Team metodologiyaları, SIEM və EDR alətləri və MITER ATT&CK çərçivəsi haqqında möhkəm anlayışım var. Mən xüsusilə zərərli proqramların təhlili və aşkarlama imkanlarının davamlı təkmilləşdirilməsi ilə maraqlanıram. Məqsədim analitik düşüncə, təfərrüata diqqət və fəal müdafiə zehniyyəti vasitəsilə davamlı təhlükəsizlik mühitlərinin yaradılmasına töhfə verməkdir.",
     aboutSkillsTitle: "Bacarıqlar:",
     aboutFactsTitle: "Maraqlı Faktlar:",
-    fact1: "👾 CTF və HackTheBox tapşırıqlarını sevir.",
+    fact1: "👾 CTF və LetsDefend tapşırıqlarını sevir.",
     fact2: "🧩 Qəhvədən əvvəl xəbərdarlıqları avtomatlaşdırır.",
     fact3: "📚 Həmişə öyrənir və bilik paylaşır.",
     cvView: "CV-yə Bax (PDF)",
