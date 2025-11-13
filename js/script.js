@@ -127,21 +127,21 @@ function renderProjects() {
     const projects_data = [
         {
             id: 'proj1',
-            title: { en: 'SIEM Log Analyzer', az: 'SIEM Loq Təhlilçisi' },
+            title: { en: 'SOC Automation Project', az: 'SOC Automation Project' },
             description: { 
-                en: 'Python script to parse, normalize, and analyze custom log formats before feeding them into a SIEM system.',
-                az: 'SIEM sisteminə daxil etməzdən əvvəl xüsusi loq formatlarını təhlil etmək, normallaşdırmaq üçün Python skripti.'
+                en: 'Explore how artificial intelligence can enhance real-world security workflows.',
+                az: 'Süni intellektin real dünyada təhlükəsizlik workflow-larını necə təkmilləşdirə biləcəyinin araşdırılması.'
             },
-            github: 'https://github.com/ahliman-code/siem-log-analyzer'
+            github: 'https://docs.google.com/document/d/1qw1feqZufx5MPxadQqsG6r0gq0m4qDhqzXPDVhkIzSI/edit?usp=sharing'
         },
         {
             id: 'proj2',
-            title: { en: 'Blue Team Honeypot', az: 'Mavi Komanda Bal Küpü' },
+            title: { en: 'Test', az: 'Test' },
             description: {
-                en: 'Low-interaction honeypot simulating common network services (SSH, FTP) for early threat intelligence gathering.',
-                az: 'Erkən təhdid kəşfiyyatı üçün ümumi şəbəkə xidmətlərini (SSH, FTP) simulyasiya edən aşağı-interaktiv bal küpü.'
+                en: 'Test.',
+                az: 'Test.'
             },
-            github: 'https://github.com/ahliman-code/blue-honeypot'
+            github: 'Test'
         }
     ];
 
