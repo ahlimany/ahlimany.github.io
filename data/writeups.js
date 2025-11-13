@@ -1,32 +1,32 @@
 const writeups_data = [
     {
         id: 'w1',
-        source: 'Azerbaijan Cybersecurity Center',
+        source: 'LetsDefend',
         title: { 
-            en: 'Phishing Email Analyze lab-1', 
-            az: 'Fişing Email Analizi lab-1' 
+            en: 'LetsDefend: SOC141 — Phishing URL Detected', 
+            az: 'LetsDefend: SOC141 — Phishing URL Detected' 
         },
         summary: { 
             en: 'Analysis of a suspicious email',
-            az: 'Şübhəli emailin təhlili.'
+            az: 'Şübhəli emailin təhlili'
         },
         // --- ADD THE EXTERNAL LINK HERE ---
-        link: 'https://docs.google.com/document/d/1kOI2LJFPT5V3rryzP0XH_B_4NFd76AOQuiZiRkF_EA0/edit?usp=sharing' 
+        link: 'https://medium.com/@ahliman573/letsdefend-soc141-phishing-url-detected-c7f18a0d7b40' 
         // Note: Make sure the Google Drive link is set to "Public" or "Anyone with the link"
     },
     {
         id: 'w2',
-        source: 'Internal SOC Case',
+        source: 'LetsDefend',
         title: { 
-            en: 'Test', 
-            az: 'Test'
+            en: 'LetsDefend: SOC146 — Phishing Mail Detected — Excel 4.0 Macros', 
+            az: 'LetsDefend: SOC146 — Phishing Mail Detected — Excel 4.0 Macros'
          },
         summary: {
-            en: 'Test',
-            az: 'Test'
+            en: 'Analysis of a suspicious email',
+            az: 'Şübhəli emailin təhlili'
         },
         // --- ADD THE EXTERNAL LINK HERE ---
-        link: 'https://example.com/test-link'
+        link: 'https://medium.com/@ahliman573/letsdefend-soc146-phishing-mail-detected-excel-4-0-macros-1ce500e5f03e'
     }
     // Add new writeups with the 'link' property.
 ];
