@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Problem with Certifications in Security — a look at where certs add value and where they become noise.">
+    <title>The Problem with Certifications in Security — Alex R. Mercer</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ======================================================
+         HEADER
+         ====================================================== -->
+    <header id="site-header">
+        <div class="container">
+            <a href="../index.html" class="site-logo">A.R.MERCER<span>_</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">[ MENU ]</button>
+            <nav id="main-nav" aria-label="Main navigation">
+                <ul id="nav-list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../research/index.html">Research</a></li>
+                    <li><a href="index.html" class="active">Blog</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ======================================================
+         MAIN
+         ====================================================== -->
+    <main>
+        <div class="page-wrapper">
+
+            <!-- Back link -->
+            <a href="index.html" class="back-link">Blog Index</a>
+
+            <!-- Page title block -->
+            <div class="page-title-block">
+                <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="index.html">Blog</a></p>
+                <h1>The Problem with Certifications in Security</h1>
+                <p class="page-meta">Published: 2024-12-01</p>
+            </div>
+
+            <!-- ============================================
+                 ARTICLE BODY
+                 ============================================ -->
+            <article class="article-content">
+
+                <p>
+                    I passed my OSCP in 2019. It was a useful experience — not because the certificate 
+                    itself means anything, but because the process forced me to actually build the skill. 
+                    Forty-eight hours in a lab, either you get shells or you don't. There's no 
+                    multiple-choice safety net.
+                </p>
+
+                <p>
+                    Five years later, I look at junior security job postings and I see a laundry list: 
+                    CISSP, CEH, Security+, GIAC GPEN, CompTIA CySA+. I look at LinkedIn profiles and 
+                    see people stacking five or six certifications, each one obtained via a test prep 
+                    course that teaches to the exam format rather than to the domain.
+                </p>
+
+                <p>
+                    I want to be direct about something: this is becoming a problem.
+                </p>
+
+                <h2>What Certifications Actually Signal</h2>
+
+                <p>
+                    A certification is a signal. In the early 2000s, when there were fewer standardized 
+                    credentials and no real talent pipeline, a CISSP or CISA was a meaningful 
+                    shorthand — it meant you'd done some subset of work across the security domains 
+                    and could at least speak the language.
+                </p>
+
+                <p>
+                    That signal has degraded. Not because the certifications got worse (some have), 
+                    but because the test preparation industry learned to reverse-engineer the signal 
+                    and produce it cheaply. You can now pass the Security+ with two weeks of 
+                    Udemy prep. That doesn't make you a security professional.
+                </p>
+
+                <p>
+                    The OSCP still has some teeth, as does the GREM (malware) and a handful of others 
+                    that are hands-on or require demonstrable output. But the majority of certs in 
+                    the field test recall and pattern matching, not judgment under pressure.
+                </p>
+
+                <h2>Where I See the Real Damage</h2>
+
+                <p>
+                    The problem isn't the certificates themselves — it's the signaling displacement 
+                    they cause. When hiring managers use certification count as a proxy for capability, 
+                    they create an incentive for candidates to optimize for the cert, not the skill.
+                </p>
+
+                <p>
+                    I've interviewed candidates who couldn't explain how TCP handshakes work but 
+                    had a Security+ and a CySA+. I've worked with consultants who had the CISSP 
+                    but couldn't read a packet capture without a GUI holding their hand.
+                </p>
+
+                <p>
+                    More importantly: I've passed on genuinely talented people who didn't have the 
+                    letters because a recruiter or HR process filtered them out before they got to 
+                    me. Those decisions cost organizations real capability.
+                </p>
+
+                <h2>What Actually Measures Skill</h2>
+
+                <p>
+                    This is not original thinking, but it bears repeating: the things that actually 
+                    measure whether someone knows security are mostly non-credentialed.
+                </p>
+
+                <ul>
+                    <li>CTF results and writeups. These are transparent and reproducible.</li>
+                    <li>Public code. Does the person write tools people actually use?</li>
+                    <li>Documented research. Not polished marketing PDFs — actual technical analysis.</li>
+                    <li>Practical interviews. Give them a machine and a problem. See what they do.</li>
+                    <li>Bug bounty track record. This is real-world adversarial output.</li>
+                </ul>
+
+                <p>
+                    None of these scale easily, which is why organizations default to certifications. 
+                    Certifications are cheap to evaluate. But cheap evaluation produces low-quality 
+                    selection.
+                </p>
+
+                <h2>A More Honest Take on Which Certs Are Worth It</h2>
+
+                <p>
+                    I don't think all certifications are useless. Here's my honest assessment of 
+                    where they add value:
+                </p>
+
+                <p>
+                    <strong>OSCP / OSED / OSEP (OffSec):</strong> The most honest certs in the 
+                    industry. Lab-based, time-limited, real exploitation required. Still worth 
+                    pursuing for the learning experience, not just the paper.
+                </p>
+
+                <p>
+                    <strong>GREM / GXPN (GIAC):</strong> Useful for niche specialization. GREM in 
+                    particular has enough depth that passing it with a high score means something.
+                </p>
+
+                <p>
+                    <strong>CISSP:</strong> Fine for management-track security roles where you 
+                    need to speak the governance language. Not a technical credential. Stop treating 
+                    it as one.
+                </p>
+
+                <p>
+                    <strong>CEH:</strong> I'll be polite and say it should be replaced by better 
+                    options. If you have it, don't lead with it.
+                </p>
+
+                <p>
+                    <strong>Security+, CySA+, etc.:</strong> Reasonable for demonstrating baseline 
+                    familiarity to non-technical stakeholders or for compliance boxes. That is their 
+                    value. Do not mistake that for technical credibility.
+                </p>
+
+                <h2>What I'd Actually Recommend</h2>
+
+                <p>
+                    If you're early in your career: spend 80% of your time building skills and 
+                    producing visible output, 20% on credentials that open specific doors you need 
+                    opened. Document your work publicly. Build a GitHub. Write a writeup for 
+                    every CTF challenge you solve.
+                </p>
+
+                <p>
+                    If you're hiring: add a practical component to your process. Give candidates 
+                    a packet capture to analyze, a binary to review, a log file to triage. 
+                    Hire for the output, not the credential list.
+                </p>
+
+                <p>
+                    The field is short on people who can actually do the work. We can't afford to 
+                    optimize for credentials over capability.
+                </p>
+
+                <hr style="border: none; border-top: 1px solid #1a2a3a; margin: 2rem 0;">
+
+                <p style="font-size: 0.8rem; color: #4a5a6a;">
+                    Comments? Disagreements? Email or PGP contact on the <a href="../index.html#contact">contact page</a>. 
+                    I read everything, though I may be slow to respond.
+                </p>
+
+            </article>
+
+        </div><!-- /page-wrapper -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Alex R. Mercer &mdash; <a href="../index.html#contact">Contact</a></p>
+        </div>
+    </footer>
+
+    <script>
+        var toggle = document.getElementById('navToggle');
+        var navList = document.getElementById('nav-list');
+        if (toggle && navList) {
+            toggle.addEventListener('click', function () {
+                var open = navList.classList.toggle('open');
+                toggle.textContent = open ? '[ CLOSE ]' : '[ MENU ]';
+            });
+        }
+    </script>
+
+</body>
+</html>
