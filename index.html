@@ -3,565 +3,357 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahliman Abbasov :: SOC Analyst</title>
+<title>Pardon the Dust</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background-color: #d6d6d6;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 12px;
-    color: #222;
+  :root{
+    --ink:#1B1B1F;
+    --yellow:#FFC93C;
+    --orange:#FF6B35;
+    --paper:#FDFBF7;
+    --red:#E63946;
   }
 
-  a { color: #1a4a7a; text-decoration: underline; }
-  a:hover { color: #c00; }
-  a:visited { color: #5a3a7a; }
+  *{box-sizing:border-box;}
 
-  /* ── TOP HEADER BAR ── */
-  #topbar {
-    background-color: #1a3a5c;
-    color: #ffffff;
-    padding: 4px 10px;
-    font-size: 11px;
-    border-bottom: 2px solid #0d2540;
-  }
-  #topbar span { color: #7fb8e8; }
-
-  /* ── MAIN HEADER ── */
-  #header {
-    background-color: #2a5080;
-    border-bottom: 3px solid #1a3a5c;
-    padding: 18px 20px 14px;
-  }
-  #header h1 {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 22px;
-    color: #ffffff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-  #header .subtitle {
-    font-size: 11px;
-    color: #9dc8e8;
-    margin-top: 4px;
-    letter-spacing: 1px;
-  }
-  #header .contact-line {
-    margin-top: 8px;
-    font-size: 11px;
-    color: #c0d8ee;
-  }
-  #header .contact-line a { color: #8ecaee; }
-
-  /* ── NAV ── */
-  #nav {
-    background-color: #3a6898;
-    border-bottom: 2px solid #1a3a5c;
-    padding: 0;
-  }
-  #nav a {
-    display: inline-block;
-    padding: 6px 14px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
-    border-right: 1px solid #2a5080;
-  }
-  #nav a:hover { background-color: #1a4a6a; color: #ffdd88; }
-
-  /* ── LAYOUT TABLE ── */
-  #layout {
-    width: 760px;
-    margin: 14px auto;
-    border-collapse: collapse;
-  }
-  #sidebar {
-    width: 190px;
-    vertical-align: top;
-    padding-right: 12px;
-  }
-  #content {
-    vertical-align: top;
-    padding-left: 6px;
+  body{
+    margin:0;
+    min-height:100vh;
+    background:var(--yellow);
+    font-family:'Space Grotesk', sans-serif;
+    color:var(--ink);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    overflow-x:hidden;
+    position:relative;
   }
 
-  /* ── SIDEBAR BOXES ── */
-  .side-box {
-    background-color: #ffffff;
-    border: 1px solid #aaaaaa;
-    margin-bottom: 10px;
-  }
-  .side-box-title {
-    background-color: #2a5080;
-    color: #ffffff;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 4px 8px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .side-box-content {
-    padding: 8px;
-    font-size: 11px;
-    line-height: 1.7;
-    color: #333;
-  }
-  .side-box-content a { color: #1a4a7a; }
-  .side-label {
-    color: #888;
-    font-size: 10px;
-    text-transform: uppercase;
-    display: block;
-    margin-top: 6px;
-  }
-  .side-value {
-    color: #222;
-    display: block;
+  /* caution tape bands top & bottom */
+  .tape{
+    width:100%;
+    height:44px;
+    background:repeating-linear-gradient(
+      45deg,
+      var(--ink),
+      var(--ink) 22px,
+      var(--yellow) 22px,
+      var(--yellow) 44px
+    );
+    flex-shrink:0;
   }
 
-  /* ── CONTENT SECTIONS ── */
-  .section {
-    background-color: #ffffff;
-    border: 1px solid #aaaaaa;
-    margin-bottom: 12px;
+  .tape-label{
+    width:100%;
+    overflow:hidden;
+    white-space:nowrap;
+    background:var(--ink);
   }
-  .section-title {
-    background-color: #3a6898;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #1a3a5c;
+  .tape-label span{
+    display:inline-block;
+    padding:6px 0;
+    font-size:13px;
+    letter-spacing:.18em;
+    color:var(--yellow);
+    animation:scroll-left 18s linear infinite;
   }
-  .section-title span {
-    font-family: "Courier New", Courier, monospace;
-    color: #9dc8e8;
-    margin-right: 6px;
-  }
-  .section-body {
-    padding: 10px 12px;
-    line-height: 1.7;
-    color: #333;
+  @keyframes scroll-left{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
   }
 
-  /* ── ABOUT ── */
-  #about-text {
-    font-size: 12px;
-    line-height: 1.8;
-    color: #333;
+  main{
+    flex:1;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:48px 20px;
   }
 
-  /* ── SKILLS TABLE ── */
-  .skills-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 11px;
-  }
-  .skills-table tr { border-bottom: 1px solid #e8e8e8; }
-  .skills-table tr:last-child { border-bottom: none; }
-  .skills-table td { padding: 5px 6px; vertical-align: top; }
-  .skill-cat {
-    font-weight: bold;
-    color: #1a3a5c;
-    width: 160px;
-    white-space: nowrap;
-  }
-  .skill-tags { color: #444; }
-  .tag {
-    display: inline-block;
-    background-color: #e8f0f8;
-    border: 1px solid #a0b8d0;
-    color: #1a3a5c;
-    padding: 1px 6px;
-    margin: 1px 2px 1px 0;
-    font-size: 10px;
+  .card{
+    background:var(--paper);
+    border:3px solid var(--ink);
+    border-radius:14px;
+    max-width:520px;
+    width:100%;
+    padding:44px 36px 36px;
+    text-align:center;
+    position:relative;
+    transform:rotate(-1.2deg);
+    box-shadow:10px 10px 0 var(--ink);
   }
 
-  /* ── PROJECT ENTRIES ── */
-  .project {
-    border-bottom: 1px dashed #cccccc;
-    padding: 8px 0;
+  .peg{
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:var(--red);
+    border:2px solid var(--ink);
+    border-radius:50%;
+    top:-10px;
   }
-  .project:last-child { border-bottom: none; }
-  .project-title {
-    font-weight: bold;
-    color: #1a3a5c;
-    font-size: 12px;
-  }
-  .project-meta {
-    color: #888;
-    font-size: 10px;
-    margin-bottom: 4px;
-    font-family: "Courier New", Courier, monospace;
-  }
-  .project-desc {
-    font-size: 11px;
-    color: #444;
-    line-height: 1.7;
-  }
-  .tech-used {
-    margin-top: 4px;
-    font-size: 10px;
-    color: #666;
-  }
-  .tech-used strong { color: #1a3a5c; }
+  .peg.left{ left:-10px; transform:rotate(20deg); }
+  .peg.right{ right:-10px; transform:rotate(-15deg); }
 
-  /* ── CERT LIST ── */
-  .cert-list {
-    list-style: none;
-    padding: 0;
-  }
-  .cert-list li {
-    padding: 5px 0;
-    border-bottom: 1px solid #eeeeee;
-    font-size: 11px;
-  }
-  .cert-list li:last-child { border-bottom: none; }
-  .cert-list li::before {
-    content: "[ + ] ";
-    color: #3a6898;
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
+  .avatar{
+    width:96px;
+    height:96px;
+    object-fit:cover;
+    border-radius:50%;
+    border:3px solid var(--ink);
+    box-shadow:4px 4px 0 var(--orange);
+    margin:0 auto 14px;
+    display:block;
   }
 
-  /* ── CTF ── */
-  .ctf-entry {
-    background-color: #f4f8fc;
-    border-left: 3px solid #3a6898;
-    padding: 8px 10px;
-    margin-bottom: 8px;
-    font-size: 11px;
+  .rig{
+    width:110px;
+    height:90px;
+    margin:0 auto 18px;
+    position:relative;
   }
-  .ctf-title {
-    font-weight: bold;
-    color: #1a3a5c;
-    font-size: 12px;
+  .post{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:10px;
+    height:56px;
+    background:var(--ink);
+    border-radius:3px;
   }
-  .ctf-date {
-    color: #888;
-    font-size: 10px;
-    font-family: "Courier New", Courier, monospace;
+  .nail{
+    position:absolute;
+    bottom:56px;
+    left:50%;
+    transform:translateX(-50%);
+    width:6px;
+    height:16px;
+    background:#9AA0A6;
+    border-radius:2px;
   }
-  .ctf-desc { color: #444; margin-top: 4px; line-height: 1.6; }
+  .hammer{
+    position:absolute;
+    top:0;
+    left:50%;
+    width:64px;
+    height:64px;
+    transform-origin: 6px 58px;
+    animation: hammer-swing 1.1s ease-in-out infinite;
+  }
+  .hammer .handle{
+    position:absolute;
+    bottom:0;
+    left:2px;
+    width:8px;
+    height:52px;
+    background:#8B5E34;
+    border-radius:3px;
+  }
+  .hammer .head{
+    position:absolute;
+    bottom:44px;
+    left:-14px;
+    width:36px;
+    height:16px;
+    background:var(--ink);
+    border-radius:3px;
+  }
+  @keyframes hammer-swing{
+    0%   { transform: translateX(-50%) rotate(-46deg); }
+    35%  { transform: translateX(-50%) rotate(6deg); }
+    45%  { transform: translateX(-50%) rotate(6deg); }
+    100% { transform: translateX(-50%) rotate(-46deg); }
+  }
+  .spark{
+    position:absolute;
+    bottom:50px;
+    left:50%;
+    font-size:18px;
+    opacity:0;
+    animation: spark-pop 1.1s ease-in-out infinite;
+  }
+  @keyframes spark-pop{
+    0%,38%{ opacity:0; transform: translate(-50%,0) scale(.5); }
+    45%{ opacity:1; transform: translate(-70%,-8px) scale(1); }
+    55%{ opacity:0; transform: translate(-90%,-14px) scale(.6); }
+    100%{ opacity:0; }
+  }
 
-  /* ── CONTACT FORM AREA ── */
-  .contact-table { width: 100%; border-collapse: collapse; font-size: 11px; }
-  .contact-table td { padding: 4px 6px; vertical-align: top; }
-  .contact-label { color: #1a3a5c; font-weight: bold; width: 90px; }
-  .contact-value a { color: #1a4a7a; }
-
-  /* ── FOOTER ── */
-  #footer {
-    width: 760px;
-    margin: 0 auto 20px;
-    text-align: center;
-    font-size: 10px;
-    color: #888;
-    border-top: 1px solid #aaaaaa;
-    padding-top: 8px;
+  h1{
+    font-family:'Rubik Mono One', sans-serif;
+    font-size:clamp(28px, 5.5vw, 40px);
+    line-height:1.15;
+    margin:6px 0 12px;
+    color:var(--ink);
   }
-  #footer span { color: #3a6898; font-family: "Courier New", Courier, monospace; }
+  h1 span{ color:var(--orange); }
 
-  /* ── SMALL DECORATIVE ── */
-  .dot-divider {
-    color: #3a6898;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 10px;
-    margin: 0 4px;
+  p.sub{
+    font-size:16px;
+    line-height:1.55;
+    margin:0 0 26px;
+    color:#3a3a3f;
   }
-  .status-dot {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background-color: #44bb44;
-    border-radius: 50%;
-    margin-right: 5px;
-    vertical-align: middle;
+
+  .progress-wrap{
+    text-align:left;
+    margin-bottom:22px;
+  }
+  .progress-label{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+    color:#5c5c63;
+  }
+  .progress-track{
+    width:100%;
+    height:16px;
+    background:#eee;
+    border:2px solid var(--ink);
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;
+    width:99%;
+    background:repeating-linear-gradient(
+      45deg,
+      var(--orange),
+      var(--orange) 10px,
+      #ff8a5c 10px,
+      #ff8a5c 20px
+    );
+    transition: transform .35s ease;
+  }
+  .progress-fill.shake{
+    animation: nudge .5s ease;
+  }
+  @keyframes nudge{
+    0%,100%{ transform:translateX(0); }
+    20%{ transform:translateX(-3px); }
+    40%{ transform:translateX(3px); }
+    60%{ transform:translateX(-2px); }
+    80%{ transform:translateX(2px); }
+  }
+
+  .status{
+    font-size:14px;
+    min-height:20px;
+    margin-bottom:22px;
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  button{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:15px;
+    background:var(--ink);
+    color:var(--yellow);
+    border:none;
+    padding:13px 26px;
+    border-radius:8px;
+    cursor:pointer;
+    letter-spacing:.02em;
+    transition: transform .15s ease, background .15s ease;
+  }
+  button:hover{ background:var(--orange); color:var(--ink); }
+  button:active{ transform:scale(.96); }
+  button:focus-visible{ outline:3px solid var(--orange); outline-offset:3px; }
+
+  footer{
+    font-size:12px;
+    color:#3a3a3f;
+    padding:14px 0;
+    background:var(--yellow);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hammer, .spark, .tape-label span{ animation:none !important; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div id="topbar">
-  ahlimany.github.io
-  <span class="dot-divider">::</span>
-  <span>SOC Analyst | Blue Team</span>
-  <span class="dot-divider">::</span>
-  <span style="color:#aad4f0;">Last updated: May 2026</span>
-</div>
-
-<!-- HEADER -->
-<div id="header">
-  <h1>Ahliman Abbasov</h1>
-  <div class="subtitle">SOC Analyst &nbsp;|&nbsp; Blue Team &nbsp;|&nbsp; Just a guy tries to learn hard security: Digital Forensics &amp; Threat Detection</div>
-  <div class="contact-line">
-    <a href="mailto:ahliman573@gmail.com">ahliman573@gmail.com</a>
-    <span class="dot-divider">::</span>
-    +994 50 484 49 14
-    <span class="dot-divider">::</span>
-    <a href="https://linkedin.com/in/ahliman-abbasov/">linkedin.com/in/ahliman-abbasov</a>
-  </div>
-</div>
-
-<!-- NAV -->
-<div id="nav">
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#certs">Certificates</a>
-  <a href="#ctf">CTF / Competitions / Awards</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<!-- MAIN LAYOUT -->
-<table id="layout">
-<tr>
-
-<!-- SIDEBAR -->
-<td id="sidebar">
-
-  <div class="side-box">
-    <div class="side-box-title">Status</div>
-    <div class="side-box-content">
-      <span class="status-dot"></span><strong>Available for hire</strong>
-      <span class="side-label">Location</span>
-      <span class="side-value">Azerbaijan</span>
-      <span class="side-label">Role</span>
-      <span class="side-value">SOC Analyst (L1)</span>
-      <span class="side-label">Focus</span>
-      <span class="side-value">Threat Detection, Digital Forensics </span>
-    </div>
+  <div class="tape"></div>
+  <div class="tape-label">
+    <span>CAUTION &mdash; SITE UNDER CONSTRUCTION &mdash; PLEASE EXCUSE THE MESS &mdash; NEW STUFF COMING SOON &mdash; CAUTION &mdash; SITE UNDER CONSTRUCTION &mdash; PLEASE EXCUSE THE MESS &mdash; NEW STUFF COMING SOON &mdash; </span>
   </div>
 
-  <div class="side-box">
-    <div class="side-box-title">Quick Links</div>
-    <div class="side-box-content">
-      <a href="https://github.com/ahlimany">GitHub</a><br>
-      <a href="https://linkedin.com/in/ahliman-abbasov/">LinkedIn</a><br>
-      <a href="mailto:ahliman573@gmail.com">Send Email</a>
-    </div>
-  </div>
+  <main>
+    <div class="card">
+      <div class="peg left"></div>
+      <div class="peg right"></div>
 
-  <div class="side-box">
-    <div class="side-box-title">Tools</div>
-    <div class="side-box-content">
-      SIEM<br>
-      Network Monitoring (Wireshark, Zeek, Tshark, Tcpdump)<br>
-      Digital Forensic (FTK Imager, Volatailty)<br>
-      MITRE ATT&amp;CK (I love it)
-    </div>
-  </div>
+      <img class="avatar" src="profile-photo.jpg" alt="Site owner">
 
-  <div class="side-box">
-    <div class="side-box-title">Languages</div>
-    <div class="side-box-content">
-      Azerbaijani: Native<br>
-      English: Upper-Intermediate
-    </div>
-  </div>
-
-</td>
-
-<!-- MAIN CONTENT -->
-<td id="content">
-
-  <!-- ABOUT -->
-  <a name="about"></a>
-  <div class="section">
-    <div class="section-title"><span>01.</span> About Me</div>
-    <div class="section-body">
-      <p id="about-text">
-        Entry-level SOC Analyst with hands-on experience in security monitoring, SIEM alert triage, and incident investigation.
-        Blue Team-trained through the <strong>Azerbaijan Cybersecurity Center &amp; Technion Israel Institute of Technology</strong>
-        program, with practical exposure to log analysis, threat detection, digital forensics, malware analysis, and OSINT.
-        <br><br>
-        Experienced with <strong>Splunk</strong>, <strong>Wazuh</strong>, and <strong>Microsoft Sentinel</strong>, with a solid
-        understanding of SOC workflows, MITRE ATT&amp;CK, and Windows/Linux environments. Recently completed a SOC internship
-        at AzInTelecom and won a hackathon at ACC involving digital forensics and CTF challenges.
-        <br><br>
-        Currently finishing a B.Sc. in Information Technology at Azerbaijan State Oil and Industrial University (July 2026).
-      </p>
-    </div>
-  </div>
-
-  <!-- SKILLS -->
-  <a name="skills"></a>
-  <div class="section">
-    <div class="section-title"><span>02.</span> Skills</div>
-    <div class="section-body">
-      <table class="skills-table">
-        <tr>
-          <td class="skill-cat">SIEM &amp; Monitoring</td>
-          <td class="skill-tags">
-            <span class="tag">Splunk</span>
-            <span class="tag">Wazuh</span>
-            <span class="tag">Microsoft Sentinel</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="skill-cat">Security Operations</td>
-          <td class="skill-tags">
-            <span class="tag">Alert Triage</span>
-            <span class="tag">Incident Response</span>
-            <span class="tag">Threat Detection</span>
-            <span class="tag">Log Analysis</span>
-            <span class="tag">MITRE ATT&amp;CK</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="skill-cat">Forensics &amp; Intel</td>
-          <td class="skill-tags">
-            <span class="tag">Digital Forensics</span>
-            <span class="tag">Malware Analysis</span>
-            <span class="tag">OSINT</span>
-            <span class="tag">OPSEC</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="skill-cat">OS &amp; Networking</td>
-          <td class="skill-tags">
-            <span class="tag">Windows</span>
-            <span class="tag">Linux</span>
-            <span class="tag">TCP/IP</span>
-            <span class="tag">DNS</span>
-            <span class="tag">HTTP</span>
-            <span class="tag">Network Traffic Analysis</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="skill-cat">Scripting</td>
-          <td class="skill-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Bash</span>
-            <span class="tag">PowerShell</span>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <a name="projects"></a>
-  <div class="section">
-    <div class="section-title"><span>03.</span> Projects / Lab Work</div>
-    <div class="section-body">
-
-      <div class="project">
-        <div class="project-title">Home SOC Lab Environment</div>
-        <div class="project-meta">// personal lab &nbsp;|&nbsp; 2025-2026</div>
-        <div class="project-desc">
-          Built and administered a multi-host SOC lab comprising a Windows Active Directory server, Splunk SIEM,
-          DVWA (vulnerable web application), and a monitored client machine — simulating a real enterprise network
-          for detection and incident response practice.
+      <div class="rig">
+        <div class="post"></div>
+        <div class="nail"></div>
+        <div class="hammer">
+          <div class="handle"></div>
+          <div class="head"></div>
         </div>
-        <div class="tech-used"><strong>Tools:</strong> Splunk, Active Directory, DVWA, Windows Server, VirtualBox</div>
+        <div class="spark">✨</div>
       </div>
 
-      <div class="project">
-        <div class="project-title">OWASP Top 10 Attack &amp; Detection Lab</div>
-        <div class="project-meta">// internship project &nbsp;|&nbsp; AzInTelecom, 2026</div>
-        <div class="project-desc">
-          Executed all OWASP Top 10 attack scenarios against DVWA — SQL injection, XSS, CSRF, file inclusion, and others —
-          then analyzed the resulting Splunk logs to identify attack patterns and wrote structured incident reports for each finding.
+      <h1>Pardon the <span>dust.</span></h1>
+      <p class="sub">Sorry about this &mdash; this site is mid-renovation. The foundations are down, the coffee is flowing, and I swear it's "almost done."</p>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Build progress</span>
+          <span id="pct">99%</span>
         </div>
-        <div class="tech-used"><strong>Tools:</strong> DVWA, Splunk, Burp Suite</div>
-      </div>
-
-      <div class="project">
-        <div class="project-title">Log &amp; Network Traffic Analysis Labs</div>
-        <div class="project-meta">// internship &amp; training &nbsp;|&nbsp; 2026</div>
-        <div class="project-desc">
-          Completed company-designed labs investigating suspicious events across Windows event logs, firewall logs,
-          and packet captures. Applied MITRE ATT&amp;CK to map attacker behaviors to TTPs and practiced real-world SOC triage workflows.
-        </div>
-        <div class="tech-used"><strong>Tools:</strong> Wireshark, Windows Event Viewer, Splunk, MITRE ATT&amp;CK Navigator</div>
-      </div>
-
-      <div class="project">
-        <div class="project-title">Defensive Security Platform Labs</div>
-        <div class="project-meta">// self-study &nbsp;|&nbsp; ongoing</div>
-        <div class="project-desc">
-          Solved hands-on defensive security challenges on LetsDefend and Blue Team Labs Online — covering malware analysis,
-          phishing triage, endpoint investigation, and SOC alert handling scenarios.
-        </div>
-        <div class="tech-used"><strong>Platforms:</strong> LetsDefend, Blue Team Labs Online (BTLO)</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- CERTIFICATES -->
-  <a name="certs"></a>
-  <div class="section">
-    <div class="section-title"><span>04.</span> Certificates</div>
-    <div class="section-body">
-      <ul class="cert-list">
-        <li>Google Cybersecurity Professional Certificate</li>
-        <li>Cisco CCNA: Introduction to Networks</li>
-        <li>Oracle Cloud Infrastructure Foundations Associate (2025)</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- CTF / AWARDS -->
-  <a name="ctf"></a>
-  <div class="section">
-    <div class="section-title"><span>05.</span> CTF / Awards</div>
-    <div class="section-body">
-      <div class="ctf-entry">
-        <div class="ctf-title">Winner — Ice-Breaker Hackathon @ ACC</div>
-        <div class="ctf-date">// August 2025 &nbsp;|&nbsp; Azerbaijan Cybersecurity Center</div>
-        <div class="ctf-desc">
-          Placed first solving real-world CTF challenges involving steganography, phishing analysis, and digital forensics.
-          Demonstrated practical blue team skills under competition conditions.
+        <div class="progress-track">
+          <div class="progress-fill" id="fill"></div>
         </div>
       </div>
+
+      <div class="status" id="status">Really, truly sorry &mdash; back soon.</div>
+
+      <button id="nudge">Nudge the crew</button>
     </div>
-  </div>
+  </main>
 
-  <!-- CONTACT -->
-  <a name="contact"></a>
-  <div class="section">
-    <div class="section-title"><span>06.</span> Contact</div>
-    <div class="section-body">
-      <table class="contact-table">
-        <tr>
-          <td class="contact-label">Email</td>
-          <td class="contact-value"><a href="mailto:ahliman573@gmail.com">ahliman573@gmail.com</a></td>
-        </tr>
-        <tr>
-          <td class="contact-label">Phone</td>
-          <td class="contact-value">+994 50 484 49 14</td>
-        </tr>
-        <tr>
-          <td class="contact-label">LinkedIn</td>
-          <td class="contact-value"><a href="https://linkedin.com/in/ahliman-abbasov/">linkedin.com/in/ahliman-abbasov</a></td>
-        </tr>
-        <tr>
-          <td class="contact-label">GitHub</td>
-          <td class="contact-value"><a href="https://github.com/ahlimany">github.com/ahlimany</a></td>
-        </tr>
-        <tr>
-          <td class="contact-label">Location</td>
-          <td class="contact-value">Azerbaijan</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+  <div class="tape"></div>
+  <footer>&copy; <span id="year"></span> &mdash; back soon, promise.</footer>
 
-</td>
-</tr>
-</table>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-<!-- FOOTER -->
-<div id="footer">
-  <span>[ ahliman abbasov ]</span> &nbsp;&mdash;&nbsp; SOC Analyst | Blue Team &nbsp;&mdash;&nbsp; Azerbaijan
-</div>
+  const messages = [
+    "Crew says it's 'basically done.'",
+    "Someone unplugged the server for a phone charger.",
+    "The intern found a bug. It was a real bug.",
+    "Coffee break extended indefinitely.",
+    "99% is the new 100%, apparently.",
+    "A pixel was misaligned. Everything stopped.",
+    "The blueprint blew away in the wind.",
+    "Testing in production. It's fine. Probably.",
+    "Hammer needs a new handle. Send help.",
+    "Progress bar filed a complaint about overtime."
+  ];
+
+  const fill = document.getElementById('fill');
+  const status = document.getElementById('status');
+  const btn = document.getElementById('nudge');
+
+  btn.addEventListener('click', () => {
+    fill.classList.remove('shake');
+    void fill.offsetWidth; // restart animation
+    fill.classList.add('shake');
+    status.textContent = messages[Math.floor(Math.random() * messages.length)];
+  });
+</script>
 
 </body>
 </html>
